@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocketIO Flask Example</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.1.2/socket.io.js"
+        integrity="sha384-3DAdqg3BrNtudAY0j96Udp7xm7FLUSoqocmgeYZgCbrM+ixg58BLeXs92Pd/Kcnb"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        h1 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #item-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #item-list li {
+            background-color: #fff;
+            padding: 10px;
+            margin-bottom: 5px;
+            border-radius: 5px;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        button[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SocketIO Flask Example</h1>
+    
+    <form id="item-form" action="" method="post">
+        <input type="text" name="name1" id="name1" placeholder="Enter Name">
+        <input type="text" name="name2" id="name2" placeholder="Enter Age">
+        <input type="text" name="name4" id="name4" placeholder="Enter Sex">
+        <input type="text" name="name3" id="name3" placeholder="Enter Mobile No.">
+        <input type="text" name="name5" id="name5" placeholder="Enter Branch">
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        var socket = io();
+        socket.on('update', function () {
+            location.reload();
+        });
+    </script>
+</body>
+
+</html>
